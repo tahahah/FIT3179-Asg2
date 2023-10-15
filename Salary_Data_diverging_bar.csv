@@ -1,27 +1,116 @@
 ,Gender,Job Title,Salary
+4,Female,Content Marketing Manager,122244.89795918367
+6,Female,Creative Director,120000.0
+7,Female,Customer Service Manager,130000.0
+10,Female,Data Analyst,114961.24031007753
+12,Female,Data Scientist,163202.9702970297
+14,Female,Digital Marketing Manager,118809.52380952382
 16,Female,Director of Data Science,200769.23076923078
 17,Female,Director of Finance,180000.0
+18,Female,Director of HR,123333.33333333333
 19,Female,Director of Human Capital,180000.0
 20,Female,Director of Human Resources,187500.0
+21,Female,Director of Marketing,119693.87755102041
 22,Female,Director of Operations,174000.0
 23,Female,Director of Sales and Marketing,180000.0
+26,Female,Financial Analyst,130000.0
+27,Female,Financial Manager,150097.08737864078
+29,Female,Full Stack Engineer,122738.4171779141
 34,Female,Human Resources Director,180000.0
+65,Female,Marketing Coordinator,80808.91719745223
 66,Female,Marketing Director,162857.14285714287
+67,Female,Marketing Manager,113060.77348066299
+70,Female,Operations Manager,125500.0
 71,Female,Product Manager,172980.76923076922
+72,Female,Project Manager,130000.0
+76,Female,Research Director,159310.3448275862
 77,Female,Research Scientist,167156.86274509804
+79,Female,Sales Director,77000.0
+81,Female,Sales Manager,114000.0
+86,Female,Senior Business Analyst,130000.0
+87,Female,Senior Consultant,140000.0
+88,Female,Senior Data Engineer,160000.0
+89,Female,Senior Data Scientist,165000.0
+91,Female,Senior Financial Analyst,115000.0
+95,Female,Senior HR Manager,150000.0
+96,Female,Senior HR Specialist,140000.0
+98,Female,Senior Human Resources Manager,120740.74074074074
+99,Female,Senior Human Resources Specialist,120000.0
+102,Female,Senior Marketing Director,160000.0
+103,Female,Senior Marketing Manager,127222.22222222222
+105,Female,Senior Operations Coordinator,120000.0
+106,Female,Senior Operations Manager,120000.0
+107,Female,Senior Product Designer,148000.0
+108,Female,Senior Product Manager,120000.0
+109,Female,Senior Product Marketing Manager,145365.8536585366
+111,Female,Senior Project Engineer,150938.98058252427
+112,Female,Senior Project Manager,123333.33333333333
+113,Female,Senior Research Scientist,142500.0
+115,Female,Senior Scientist,140000.0
+116,Female,Senior Software Engineer,137907.23076923078
+118,Female,Senior UX Designer,155000.0
+123,Female,Software Engineer,104668.39378238341
 124,Female,Software Engineer Manager,171792.9
+126,Female,Supply Chain Analyst,130000.0
 136,Male,CEO,250000.0
 137,Male,Chief Data Officer,220000.0
 138,Male,Chief Technology Officer,250000.0
+139,Male,Content Marketing Manager,125000.0
+140,Male,Customer Service Manager,80000.0
+143,Male,Data Analyst,130675.21367521367
+144,Male,Data Scientist,168442.2310756972
+147,Male,Digital Marketing Manager,75967.74193548386
 148,Male,Director,200000.0
+149,Male,Director of Business Development,170000.0
 150,Male,Director of Data Science,207741.93548387097
 151,Male,Director of Engineering,180000.0
 152,Male,Director of Finance,170000.0
+153,Male,Director of HR,121025.64102564103
+154,Male,Director of Marketing,160641.02564102566
 155,Male,Director of Operations,171666.66666666666
+156,Male,Director of Product Management,175000.0
+157,Male,Director of Sales,175000.0
+158,Male,Financial Analyst,84166.66666666667
+159,Male,Financial Manager,119677.41935483871
+162,Male,Full Stack Engineer,131648.9290780142
+165,Male,IT Manager,120000.0
+196,Male,Marketing Coordinator,120000.0
 197,Male,Marketing Director,189900.0
+198,Male,Marketing Manager,127202.7027027027
 201,Male,Operations Director,190000.0
+202,Male,Operations Manager,95410.71428571429
+203,Male,Principal Engineer,170000.0
+204,Male,Principal Scientist,120000.0
 206,Male,Product Manager,127296.65071770335
+209,Male,Project Manager,118571.42857142857
+210,Male,Research Director,165869.5652173913
 211,Male,Research Scientist,160277.77777777778
+213,Male,Sales Director,128245.61403508772
+215,Male,Sales Manager,98902.43902439025
+219,Male,Senior Business Analyst,95000.0
+221,Male,Senior Data Analyst,155000.0
+222,Male,Senior Data Engineer,150000.0
+223,Male,Senior Data Scientist,150175.43859649124
+224,Male,Senior Engineer,127500.0
+225,Male,Senior Financial Analyst,111250.0
+228,Male,Senior Human Resources Manager,95238.09523809524
+230,Male,Senior IT Project Manager,130000.0
+232,Male,Senior Manager,160000.0
+237,Male,Senior Operations Coordinator,90000.0
+238,Male,Senior Operations Manager,105000.0
+240,Male,Senior Product Manager,122000.0
+241,Male,Senior Product Marketing Manager,99107.14285714286
+243,Male,Senior Project Engineer,173617.55399061032
+244,Male,Senior Project Manager,133750.0
+246,Male,Senior Research Scientist,133600.0
+247,Male,Senior Researcher,150000.0
+248,Male,Senior Sales Manager,132500.0
+249,Male,Senior Scientist,115000.0
+250,Male,Senior Software Architect,120000.0
+251,Male,Senior Software Developer,118333.33333333333
+252,Male,Senior Software Engineer,161369.17647058822
+254,Male,Software Engineer,118335.38461538461
 255,Male,Software Engineer Manager,172759.14855072464
+257,Male,Strategy Consultant,130000.0
 262,Male,VP of Finance,200000.0
 263,Male,VP of Operations,190000.0
