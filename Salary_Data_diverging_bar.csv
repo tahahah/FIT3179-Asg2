@@ -1,11 +1,27 @@
 ,Gender,Job Title,Salary
-150,Male,Director of Data Science,207741.93548387097
 16,Female,Director of Data Science,200769.23076923078
-197,Male,Marketing Director,189900.0
 17,Female,Director of Finance,180000.0
+19,Female,Director of Human Capital,180000.0
+20,Female,Director of Human Resources,187500.0
 22,Female,Director of Operations,174000.0
-243,Male,Senior Project Engineer,173617.55399061032
+23,Female,Director of Sales and Marketing,180000.0
+34,Female,Human Resources Director,180000.0
+66,Female,Marketing Director,162857.14285714287
 71,Female,Product Manager,172980.76923076922
-255,Male,Software Engineer Manager,172759.14855072464
+77,Female,Research Scientist,167156.86274509804
 124,Female,Software Engineer Manager,171792.9
+136,Male,CEO,250000.0
+137,Male,Chief Data Officer,220000.0
+138,Male,Chief Technology Officer,250000.0
+148,Male,Director,200000.0
+150,Male,Director of Data Science,207741.93548387097
+151,Male,Director of Engineering,180000.0
+152,Male,Director of Finance,170000.0
 155,Male,Director of Operations,171666.66666666666
+197,Male,Marketing Director,189900.0
+201,Male,Operations Director,190000.0
+206,Male,Product Manager,127296.65071770335
+211,Male,Research Scientist,160277.77777777778
+255,Male,Software Engineer Manager,172759.14855072464
+262,Male,VP of Finance,200000.0
+263,Male,VP of Operations,190000.0
