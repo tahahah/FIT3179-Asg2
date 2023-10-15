@@ -1,11 +1,11 @@
-Gender,Job Title,Salary
-Male,CEO,250000.0
-Male,Chief Technology Officer,250000.0
-Male,Chief Data Officer,220000.0
-Male,Director of Data Science,207741.93548387097
-Female,Director of Data Science,200769.23076923078
-Male,Director,200000.0
-Male,VP of Finance,200000.0
-Male,Operations Director,190000.0
-Male,VP of Operations,190000.0
-Male,Marketing Director,189900.0
+,Gender,Job Title,Salary
+150,Male,Director of Data Science,207741.93548387097
+16,Female,Director of Data Science,200769.23076923078
+197,Male,Marketing Director,189900.0
+17,Female,Director of Finance,180000.0
+22,Female,Director of Operations,174000.0
+243,Male,Senior Project Engineer,173617.55399061032
+71,Female,Product Manager,172980.76923076922
+255,Male,Software Engineer Manager,172759.14855072464
+124,Female,Software Engineer Manager,171792.9
+155,Male,Director of Operations,171666.66666666666
