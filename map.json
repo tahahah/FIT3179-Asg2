@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Number of job postings in cities",
+  "width": "container",
+  "height": 400,
+  "projection": {"type": "equirectangular"},
+  "layer": [
+      {
+          "data": {
+              "url": "https://raw.githubusercontent.com/tahahah/FIT3179_Map/main/ne_50m_aus.json",
+              "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
+          },
+          "mark": {"type": "geoshape", "fill": "mintcream", "stroke": "black"}
+      },
+      {
+          "data": {
+              "url": "https://raw.githubusercontent.com/tahahah/FIT3179_Map/main/ne_50m_aus.json",
+              "format": {"type": "topojson", "feature": "ne_110m_graticules_10"}
+          },
+          "mark": {"type": "geoshape", "fill": "mintcream", "stroke": "black"},
+          "encoding": {"opacity": {"value": 0.3}}
+      },
+      {
+          "data": {
+              "name": "earthquakes",
+              "url": "https://raw.githubusercontent.com/tahahah/FIT3179-Week-10-Homework/main/cities_and_freqofjoblistings_loc.csv",
+              "format": {"type": "csv"}
+          },
+          "mark": {"type": "circle", "color": "red"},
+          "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "size": {"field": "frequency", "type": "quantitative", "scale": {"type": "sqrt", "domain": [0, 100]}, "title": "Number of job postings"},
+              "opacity": {
+                  "condition": {"selection": "selected_city", "value": 0.25},
+                  "value": 0.05
+              },
+              "tooltip": [{"field": "frequency", "title": "Frequency"}, {"field": "city", "title": "City"}]
+          }
+      },
+      {
+          "data": {
+              "name": "earthquakes",
+              "url": "https://raw.githubusercontent.com/tahahah/FIT3179-Week-10-Homework/main/cities_and_freqofjoblistings_loc.csv",
+              "format": {"type": "csv"}
+          },
+          "mark": {"type": "circle"},
+          "selection": {
+              "selected_city": {
+                  "type": "single",
+                  "fields": ["city"],
+                  "bind": {"legend": "city"},
+                  "empty": "all"
+              }
+          },
+          "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "size": {"field": "frequency", "type": "quantitative", "scale": {"type": "sqrt", "domain": [0, 100]}},
+              "color": {"field": "city", "type": "nominal", "scale": {"domain": ["Brisbane", "Melbourne", "Perth", "Sydney"], "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]}, "title": "City"},
+              "opacity": {
+                  "condition": {"selection": "selected_city", "value": 0.7},
+                  "value": 0.05
+              },
+              "tooltip": [{"field": "frequency", "title": "Frequency"}, {"field": "city", "title": "City"}]
+          }
+      }
+  ]
+}

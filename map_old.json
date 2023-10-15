@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Number of job postings in cities",
+  "width": "container",
+  "height": 400,
+  "projection": {"type": "equirectangular"},
+  "layer": [
+
+  {
+    "data": {
+      "url": "https://raw.githubusercontent.com/tahahah/FIT3179_Map/main/ne_50m_aus.json",
+      "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
+    },
+    "mark": {"type": "geoshape", "fill": "mintcream", "stroke": "black"}
+  },
+  {
+    "data": {
+      "url": "https://raw.githubusercontent.com/tahahah/FIT3179_Map/main/ne_50m_aus.json",
+      "format": {"type": "topojson", "feature": "ne_110m_graticules_10"}
+    },
+    "mark": {"type": "geoshape", "fill": "mintcream", "stroke": "black"}
+  },
+  {
+    "data": {
+      "name": "earthquakes",
+      "url": "https://raw.githubusercontent.com/tahahah/FIT3179-Week-10-Homework/main/cities_and_freqofjoblistings_loc.csv",
+      "format": {"type": "csv"}
+    },
+    "mark": {"type": "circle", "color": "red", "opacity": 0.25},
+    "encoding": {
+      "longitude": {"field": "longitude", "type": "quantitative"},
+      "latitude": {"field": "latitude", "type": "quantitative"},
+      "size": {
+        "legend": {"title": "Number of job postings"
+
+        },
+        "field": "frequency",
+        "type": "quantitative",
+        "scale": {
+          "type": "sqrt",
+          "domain": [0, 100]
+        }
+      },
+      "tooltip": [
+        {"field": "city", "title": "City"},
+
+        {"field": "frequency", "type": "quantitative", "title": "Number of job postings"}
+      ]
+    }
+  }
+
+  ]
+}

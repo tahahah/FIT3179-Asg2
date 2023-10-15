@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 300,
+    "data": {
+      "url": "https://raw.githubusercontent.com/tahahah/FIT3179-Week-10-Homework/main/aussie_jobs_smaller_withSalary.csv"
+    },
+    "transform": [
+      {
+        "aggregate": [{"op": "count", "field": "category", "as": "count"}],
+        "groupby": ["category"]
+      },
+      {
+        "window": [{"op": "rank", "as": "rank"}],
+        "sort": [{"field": "count", "order": "descending"}]
+      },
+      {
+        "filter": "(datum.rank <= 10)"
+      }
+    ],
+    "title": "Top 10 Job Categories in Australia",
+    "mark": "arc",
+    "encoding": {
+      "theta": {"field": "count", "type": "quantitative"},
+      "color": {"field": "category", "type": "nominal", "title": "Category", "scale": {"scheme": "tableau20"}},
+      "tooltip": [
+        {"field": "category", "title": "Job Type"},
+        {"field": "count", "title": "Count"}
+      ],
+      "order": {"field": "rank", "type": "ordinal"},
+      "opacity": {
+            "condition": {"selection": "category", "value": 1},
+            "value": 0.1
+          }
+    },
+    "selection": {
+          "category": {"type": "multi", "fields": ["category"], "bind": "legend"}
+        }
+  }
+  

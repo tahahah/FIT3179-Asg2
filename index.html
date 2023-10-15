@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jobs across Australia</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      font-family: 'Oxygen', sans-serif;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-weight: 900;
+    }
+
+    body {
+      background-color: lightgray;
+    }
+
+    .page {
+      width: 750px;
+      background-color: white;
+      margin: auto;
+      padding: 70px;
+      padding-top: 35px;
+      margin-top: 30px;
+    }
+
+    .vis-container {
+      width: 100%;
+    }
+
+    .description h2,
+    h1 {
+      margin-top: 10px;
+    }
+
+    .description-right {
+      padding-left: 10px;
+    }
+
+    .description-left {
+      padding-right: 10px;
+    }
+
+    .pure-g {
+      margin-bottom: 25px;
+    }
+
+    .small-font {
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- Title and subtitle -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Jobs in Australia</h1>
+        <p>Let's explore the job trends prevalent in Australia!</p>
+      </div>
+    </div>
+
+    <!-- First Vega-Lite Chart -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis1" class="vis-container"></div>
+      </div>
+    </div>
+    <p>We can see that the job postings are more populated in the capital cities, especially those in the south east of Australia.</p>
+      
+      <p>You can hover over the map to see the number of job postings in each city.</p>
+
+    <!-- Second Vega-Lite Chart -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+    </div>
+    <p>You can select cities on the legend to highlight them on the bar chart.</p>
+    <p>The bar chart shows the number of job postings in each city. We can see that Sydney has the highest number of job postings.</p>
+
+    <!-- Third Vega-Lite Chart -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis3" class="vis-container"></div>
+      </div>
+    </div>
+    <p>These charts indicate that the most popular job category is <b> Information and Communication Technology </b> while the most popular job type is <b> Full-time</b>.</p>
+  </div>
+
+  <!-- good charts to add- sunburst and heatmap  -->
+
+  <script type="text/javascript">
+    var specVis1 = "TourEarnings.json"; // Replace with your actual file path
+    var specVis2 = "Map_dev.json"; // Replace with your actual file path
+    var specVis3 = "jobcategory.json"; // Replace with your actual file path
+    var specVis4 = "jobtype.json"; // Replace with your actual file path
+
+    vegaEmbed('#vis1', specVis1, {
+      "actions": false
+    }).catch(console.error);
+
+    vegaEmbed('#vis2', specVis2, {
+      "actions": false
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, {
+      "actions": false
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, {
+      "actions": false
+    }).catch(console.error);
+  </script>
+</body>
+
+
+</html>

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 300,
+  "title": "Prize Money Earnings (US Dollars)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/djha0001/FIT3179/main/Mens_Tennis_Grand_Slam_Winner.csv"
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "selection": {
+        "Opens": {"type": "multi", "fields": ["TOURNAMENT"], "bind": "legend"}
+      },
+      "encoding": {
+        "x": {"timeUnit": "year", "field": "YEAR", "title": "Year"},
+        "y": {"field": "EARNINGS", "type": "quantitative", "title": "Earnings"},
+        "color": {"field": "TOURNAMENT"},
+        "opacity": {"condition": {"selection": "Opens", "value": 1}, "value": 0.2},
+        "tooltip": [
+          {
+            "field": "YEAR",
+            "type": "temporal",
+            "title": "Year",
+            "timeUnit": "year"
+          },
+          {
+            "field": "EARNINGS",
+            "type": "quantitative",
+            "title": "Earnings",
+            "format": "$,.2f"
+          },
+          {"field": "TOURNAMENT", "type": "nominal", "title": "Tournament"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": 60,
+        "dy": -115
+      },
+      "encoding": {"text": {"value": "Highest Earnings ever made -->"}}
+    }
+  ]
+}
