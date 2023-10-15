@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/tahahah/FIT3179-Asg2/main/Salary_Data.csv"
+    },
+    "height": 400,
+    "width": 500,
+    "title": "Salary with Years of Experience and Age",
+    "transform": [
+      {
+        "calculate": "toNumber(datum['Years of Experience'])",
+        "as": "YearsExperienceNum"
+      }
+    ],
+    "mark": "rect",
+    "encoding": {
+      "x": {
+        "field": "Age",
+        "type": "ordinal",
+        "title": "Age"
+      },
+      "y": {
+        "field": "Years of Experience",
+        "type": "ordinal",
+        "title": "Years of Experience",
+        "sort": {
+          "field": "YearsExperienceNum",
+          "order": "descending"
+        }
+      },
+      "color": {
+        "field": "Salary",
+        "aggregate": "mean",
+        "type": "quantitative",
+        "legend": {
+          "title": null
+        }
+      }
+    }
+  }
+  
