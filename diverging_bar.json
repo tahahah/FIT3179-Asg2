@@ -8,7 +8,7 @@
     {"calculate": "datum.Gender == 'Female' ? -datum.Salary : datum.Salary", "as": "signed_salary"}
   ],
   "width": "container",
-  "height": 350,
+  "height": 375,
   "vconcat": [
     {
       "width": 500,
