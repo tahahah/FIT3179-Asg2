@@ -1,18 +1,42 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 300,
     "data": {
       "url": "https://raw.githubusercontent.com/tahahah/FIT3179-Week-10-Homework/main/aussie_jobs_smaller_withSalary.csv"
     },
-    "title": "Job Type Distribution",
     "mark": "arc",
     "encoding": {
       "theta": {"field": "job_type", "type": "quantitative", "aggregate": "count"},
-      "color": {"field": "job_type", "type": "nominal", "title": "Job Type", "scale": {"scheme": "tableau20"}},
+      "color": {"field": "job_type", "type": "nominal", "title": "Employment Contract", "scale": {"scheme": "tableau20"}},
+      "radius": {
+        "field": "job_type", "type": "quantitative", "aggregate": "count",
+        "scale": {"type": "sqrt", "zero": true, "rangeMin": 40, "nice": true}
+      },
       "tooltip": [
-        {"field": "job_type", "title": "Job Type"},
+        {"field": "job_type", "title": "Employment Contract"},
         {"field": "__count", "title": "Count"}
       ],
-      "text": {"field": "job_type", "type": "nominal", "aggregate": "count"}
+      "text": {"field": "job_type", "type": "nominal", "aggregate": "count"},
+      "opacity": {
+        "condition": [
+          {"selection": "hover", "value": 1}
+      ],
+        "value": 0.85
+      }
+    },
+    "selection": {
+      "hover": {
+        "type": "single",
+        "on": "mouseover",
+        "empty": "none",
+        "fields": ["job_type"],
+        "clear": "mouseout"
+      }
+    },
+    "config": {
+      "view": {"stroke": null},
+      "axis": {"grid": false}
     }
   }
   

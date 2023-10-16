@@ -3,9 +3,9 @@
     "data": {
       "url": "https://raw.githubusercontent.com/tahahah/FIT3179-Asg2/main/Salary_Data.csv"
     },
+    "background": "#f3f9fa",
     "height": 400,
-    "width": 500,
-    "title": "Salary with Years of Experience and Age",
+    "width": "container",
     "transform": [
       {
         "calculate": "toNumber(datum['Years of Experience'])",
@@ -17,7 +17,10 @@
       "x": {
         "field": "Age",
         "type": "ordinal",
-        "title": "Age"
+        "title": "Age",
+        "axis": {
+          "format": ".0f"
+        }
       },
       "y": {
         "field": "Years of Experience",
@@ -26,6 +29,9 @@
         "sort": {
           "field": "YearsExperienceNum",
           "order": "descending"
+        },
+        "axis": {
+          "format": ".0f"
         }
       },
       "color": {
@@ -33,9 +39,14 @@
         "aggregate": "mean",
         "type": "quantitative",
         "legend": {
-          "title": null
+          "title": "Annual Salary"
         }
-      }
+      },
+      "tooltip": [
+        {"field": "Salary", "type": "quantitative", "title": "Annual Salary", "format": "$.0f"},
+        {"field": "Age",   "type": "ordinal",   "title": "Age", "format": ".0f"},
+        {"field": "Years of Experience",   "type": "ordinal",   "title": "Years of Experience", "format": ".0f"}
+      ]
     }
   }
   

@@ -1,0 +1,126 @@
+body {
+    background: linear-gradient(to bottom, #E9F5F7, #97f0f8); /* Updated to include gradient */
+}
+
+.header {
+    border-radius: 10px; /* Rounded corners */
+}
+
+.row .column:not(:last-child) {
+    background-color: #F3F9FA; /* Light blue tint */
+}
+
+.row .column:last-child {
+    background-color: #FFFFFF; /* Pure white */
+}
+
+
+.pure-g {
+    margin: 25px;
+}
+
+
+.vis-container {
+    width: 100%;
+}
+  
+.column {
+    border-radius: 10px; /* Rounded corners for the inner divs */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle drop shadow */
+}
+
+.header h1 {
+    color: #FFFFFF; /* Text color for the main title */
+}
+
+h2 {
+    color: #007878; /* Deep teal/cyan color for the data points */
+}
+
+p {
+    color: #333333; /* Dark gray color for the descriptive text */
+    margin: 10px;
+    font-size: 16px;
+}
+
+#divergingBarVis {
+    margin-bottom: 20px;  /* Adjust this value as needed */
+}
+
+.pure-u-1-2 p {
+    padding: 10px 0;   /* 10px top and bottom padding */
+}
+
+#diverging_text p {
+    margin-left: 100px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header, .footer {
+    background-color: #26A0A7;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 2px dotted #ccc;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: auto;  /* added this line to handle overflow */
+}
+
+.column:not(:last-child) {
+    margin-right: 20px;
+}
+
+
+.icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}

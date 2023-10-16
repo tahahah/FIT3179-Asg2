@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Number of job postings in cities",
   "width": "container",
   "height": 400,
   "projection": {"type": "equirectangular"},
@@ -35,7 +34,7 @@
                   "condition": {"selection": "selected_city", "value": 0.25},
                   "value": 0.05
               },
-              "tooltip": [{"field": "frequency", "title": "Frequency"}, {"field": "city", "title": "City"}]
+              "tooltip": [{"field": "frequency", "title": "Number of Jobs"}, {"field": "city", "title": "City"}]
           }
       },
       {
@@ -57,12 +56,12 @@
               "longitude": {"field": "longitude", "type": "quantitative"},
               "latitude": {"field": "latitude", "type": "quantitative"},
               "size": {"field": "frequency", "type": "quantitative", "scale": {"type": "sqrt", "domain": [0, 100]}},
-              "color": {"field": "city", "type": "nominal", "scale": {"domain": ["Brisbane", "Melbourne", "Perth", "Sydney"], "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]}, "title": "City"},
+              "color": {"field": "city", "type": "nominal", "scale": {"domain": ["Brisbane", "Melbourne", "Perth", "Sydney"], "range": ["#006da1", "#ff800f", "#2ca02c", "#9467bd"]}, "title": "City"},
               "opacity": {
                   "condition": {"selection": "selected_city", "value": 0.7},
                   "value": 0.05
               },
-              "tooltip": [{"field": "frequency", "title": "Frequency"}, {"field": "city", "title": "City"}]
+              "tooltip": [{"field": "frequency", "title": "Number of Jobs"}, {"field": "city", "title": "City"}]
           }
       }
   ]

@@ -1,26 +1,28 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 500,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/tahahah/FIT3179-Week-10-Homework/main/aussie_jobs_cleaned_withSalary.csv"
   },
   "layer": [
     {
-      "mark": "bar",
+      "mark": {
+        "type": "bar"
+      },
       "selection": {
         "city": {"type": "multi", "fields": ["city"], "bind": "legend"}
       },
       "encoding": {
-        "x": {"bin": {"step": 50000}, "field": "Salary", "type": "quantitative"},
-        "y": {"aggregate": "count", "type": "quantitative"},
+        "x": {"bin": {"step": 50000}, "field": "Salary", "type": "quantitative", "band": 1},
+        "y": {"aggregate": "count", "type": "quantitative", "title": "Number of Jobs"},
         "color": {
           "title": "City",
           "field": "city",
           "type": "nominal",
           "scale": {
             "domain": ["Brisbane", "Melbourne", "Perth", "Sydney"],
-            "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]
+            "range": ["#006da1", "#ff800f", "#2ca02c", "#9467bd"]
           }
         },
         "opacity": {"condition": {"selection": "city", "value": 1}, "value": 0.1},
@@ -37,12 +39,16 @@
       "mark": {
         "type": "text",
         "align": "center",
-        "dx": 50,
+        "dx": 70,
         "dy": -200,
         "baseline": "middle",
         "fontStyle": "italic"
       },
-      "encoding": {"text": {"value": "<- Salary bracket with highest count"}}
+      "encoding": {"text": {"value": "<- Salary bracket with highest number of jobs"}}
     }
-  ]
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false}
+  }
 }

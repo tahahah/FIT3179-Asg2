@@ -1,132 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Jobs across Australia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
     integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
-
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600&family=Livvic:wght@200&family=Montserrat:wght@600&display=swap"
+    rel="stylesheet">
   <style>
-    * {
-      font-family: 'Oxygen', sans-serif;
-      line-height: 1.5;
-    }
-
-    h1 {
-      font-weight: 900;
-    }
-
-    body {
-      background-color: lightgray;
-    }
-
-    .page {
-      width: 750px;
-      background-color: white;
-      margin: auto;
-      padding: 70px;
-      padding-top: 35px;
-      margin-top: 30px;
-    }
-
-    .vis-container {
-      width: 100%;
-    }
-
-    .description h2,
-    h1 {
-      margin-top: 10px;
-    }
-
-    .description-right {
-      padding-left: 10px;
-    }
-
-    .description-left {
-      padding-right: 10px;
-    }
-
-    .pure-g {
-      margin-bottom: 25px;
-    }
-
-    .small-font {
-      font-size: 13px;
+    h1,
+    h2,
+    h3 {
+      font-family: 'Gabarito', sans-serif;
     }
   </style>
+  <title>Jobs Trends in Australia</title>
 </head>
 
 <body>
+  <div class="container">
+    <div class="header">
+      <h1>💼 Jobs Trends in Australia (2018) 📈</h1>
+    </div>
 
-  <div class="page">
 
-    <!-- Title and subtitle -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h1>Jobs in Australia</h1>
-        <p>Let's explore the job trends prevalent in Australia!</p>
+    <div class="row">
+      <div class="column">
+        <h2>Jobs across Australia</h2>
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div id="mapVis" class="vis-container"></div>
+          </div>
+        </div>
+        <input type="range" id="numJobsSlider" name="numJobs" min="0" max="100" step="1" value="0">
+        <br>
+        <br>
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <p>We can see that the job postings are more populated in the capital cities, especially those in the south
+              east of Australia. This can be attributed to the fact that most of Australia is still very loosely populated. The density of population is high only within the metropolitan cities that are highlighted by the bubbles, which explains the density of jobs also being greater in the same cities. Therefore, living in one of these cities provides a clear advantage to gaining job opportunities </p>
+          </div>
+          <div class="pure-u-1-2">
+            <p><i>🖱️ Hover over the city points in the map to see more information about them.</i></p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- First Vega-Lite Chart -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div id="vis1" class="vis-container"></div>
-      </div>
-    </div>
-    <p>We can see that the job postings are more populated in the capital cities, especially those in the south east of Australia.</p>
-      
-      <p>You can hover over the map to see the number of job postings in each city.</p>
 
-    <!-- Second Vega-Lite Chart -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div id="vis2" class="vis-container"></div>
-      </div>
-    </div>
-    <p>You can select cities on the legend to highlight them on the bar chart.</p>
-    <p>The bar chart shows the number of job postings in each city. We can see that Sydney has the highest number of job postings.</p>
+    <div class="row">
+      <div class="column">
+        <h2>Influence of Age and Experience on Salary</h2>
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div id="heatmapVis" class="vis-container"></div>
+          </div>
+        </div>
 
-    <!-- Third Vega-Lite Chart -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div id="vis3" class="vis-container"></div>
+        <p>There is a strong trend of higher salaries in older people with years of experience. This is indicated
+          through the prevalence of darker shades in the top right portion of the heatmap.</p> <br>
+          <p><i>🖱️ Hover over the shaded rectangles in the chart to see more information about them.</i></p>
+
+      </div>
+      <div class="column">
+        <h2>Cites with the highest salaries</h2>
+        <br />
+
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div id="stackedBarVis" class="vis-container"></div>
+          </div>
+        </div>
+        <p>Sydney has the most jobs overall, while Melbourne has most high paying job within the dataset explored. Perth
+          only occupies the lower end of the spectrum while the other three cities are distributed in similar salary
+          brackets. The bracket ranging from $150k to $200k is empty</p> <br/>
+        <p> <i>🖱️ Click on the countries in the legend to highlight the data from that country.</i></p>
       </div>
     </div>
-    <p>These charts indicate that the most popular job category is <b> Information and Communication Technology </b> while the most popular job type is <b> Full-time</b>.</p>
+
+    <div class="row">
+      <div class="column">
+
+        <h2>Top Job Categories in Australia</h2>
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div id="jobCategoryVis" class="vis-container"></div>
+          </div>
+        </div>
+        <p>The biggest job category in Australia is Information and Communication Technology with 311 job postings. The pie chart shows the diversity of different job categories within Australia. There are both jobs that require higher education alongside jobs that require minimal or none higher education within the top job categories. To increase the chances of landing a job, an individual should choose the domains of IT, Accounting or Trades and Services.</p><br/>
+        <p> <i>🖱️ Click on the countries in the legend to highlight the data from that country.</i></p>
+
+      </div>
+      <div class="column">
+        <h2>Employment Contract Distribution</h2>
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div id="jobTypeVis" class="vis-container"></div>
+          </div>
+        </div>
+        <p>Most job positions posted require the hired applicant to pursue a full-time employment contract. This is the standard practice with over 60% of the job postings being for full-time jobs. To increase the chances of success in job pursuit, one must aim for full-time jobs. Casual and Part time jobs are posted significantly lesser times. This indicates that employers are looking for employees that are dedicated and willing to commit to a full time working life style.</p><br>
+        <p><i>🖱️ Hover over the pie slices in the chart to interact with them.</i></p>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="column">
+        <h2>Comparison of Salaries for Both Genders</h2>
+
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <div id="divergingBarVis" class="vis-container"></div>
+          </div>
+          <div class="pure-u-1-2" id="diverging_text">
+            
+            <p> From a cursory glance, there are discernible gaps in salaries between genders in many positions. The brown bars tend to be taller in most cases, suggesting that males, on average, receive higher salaries than their female counterparts in those positions. However, there are instances where the female average salary (purple bars) is competitive or even surpasses the male average.</p>
+            <br>
+            <p> Upon taking a wholistic view of the chart, it is apparent that the distribution for the female salary is consistently distributed similar to the male salary. While the male bars do stretch longer than the female bars, the female bars are not far off.</p>
+            <br><br>
+            <br>
+            <p><i>🖱️ Select a subset of the chart in the top graph to amplify it within the bottom chart.</i></p>
+            <br>
+            <p><i>🖱️ Hover over the shaded rectangles in the chart to see more information about them.</i></p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="footer">
+      <p>Made by Taha Ansari</p>
+    </div>
   </div>
-
-  <!-- good charts to add- sunburst and heatmap  -->
-
-  <script type="text/javascript">
-    var specVis1 = "map.json"; // This is the visual heirarchy, it is the biggest and most salient idiom on the visualisation
-    var specVis2 = "stacked_bar.json"; // Replace with your actual file path
-    var specVis3 = "jobcategory.json"; // Replace with your actual file path
-    var specVis4 = "jobtype.json"; // Replace with your actual file path
-
-    vegaEmbed('#vis1', specVis1, {
-      "actions": false
-    }).catch(console.error);
-
-    vegaEmbed('#vis2', specVis2, {
-      "actions": false
-    }).catch(console.error);
-
-    vegaEmbed('#vis3', specVis3, {
-      "actions": false
-    }).catch(console.error);
-
-    vegaEmbed('#vis4', specVis4, {
-      "actions": false
-    }).catch(console.error);
-  </script>
 </body>
+<script type="text/javascript">
+  var mapSpec = "map.json";
+  var stackedBarSpec = "stacked_bar.json";
+  var jobCategorySpec = "jobcategory.json";
+  var jobTypeSpec = "jobtype.json";
+  var divergingBarSpec = "diverging_bar.json";
+  var heatmapSpec = "heatmap.json";
 
+  vegaEmbed('#mapVis', mapSpec, { "actions": false }).catch(console.error);
+  vegaEmbed('#stackedBarVis', stackedBarSpec, { "actions": false }).catch(console.error);
+  vegaEmbed('#jobCategoryVis', jobCategorySpec, { "actions": false }).catch(console.error);
+  vegaEmbed('#jobTypeVis', jobTypeSpec, { "actions": false }).catch(console.error);
+  vegaEmbed('#divergingBarVis', divergingBarSpec, { "actions": false }).catch(console.error);
+  vegaEmbed('#heatmapVis', heatmapSpec, { "actions": false }).catch(console.error);
+
+  var numJobsSlider = document.getElementById("numJobsSlider");
+
+  // Listen for slider changes
+  numJobsSlider.addEventListener("input", function () {
+    var numJobs = parseInt(numJobsSlider.value);
+
+    // Update the parameter value
+    mapSpec.params.numJobs = numJobs;
+
+    // Re-embed the visualization with the updated parameter
+    vegaEmbed('#mapVis', mapSpec, { "actions": false }).catch(console.error);
+  });
+</script>
 
 </html>

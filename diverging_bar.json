@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/tahahah/FIT3179-Asg2/main/Salary_Data_diverging_bar.csv"
+  },
+  "transform": [
+    {"filter": "datum.Gender != 'Other'"},
+    {"calculate": "datum.Gender == 'Female' ? -datum.Salary : datum.Salary", "as": "signed_salary"}
+  ],
+  "width": "container",
+  "height": 350,
+  "vconcat": [
+    {
+      "width": 500,
+      "selection": {
+        "brush": {"type": "interval", "encodings": ["x"]}
+      },
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Job Title",
+          "type": "nominal",
+          "axis": null,
+          "sort": "descending"
+        },
+        "y": {
+          "aggregate": "mean",
+          "field": "signed_salary",
+          "title": "Average Salary",
+          "axis": {
+            "labelExpr": "abs(datum.value)",
+            "format": "$.2f"
+          }
+        },
+        "color": {
+          "field": "Gender",
+          "scale": {"range": ["#675193", "#ca8861"]},
+          "legend": {"orient": "top", "title": null}
+        },
+        "tooltip": [
+          {"field": "Job Title", "type": "nominal", "title": "Job Title"},
+          {"field": "Gender", "type": "nominal", "title": "Gender"},
+          {"field": "Salary", "type": "quantitative", "title": "Salary", "format": "$.2f"}
+        ]
+      }
+    },
+    {
+      "width": 500,
+      "transform": [
+        {"filter": {"selection": "brush"}}
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Job Title",
+          "type": "nominal",
+          "axis": null,
+          "sort": "descending"
+        },
+        "y": {
+          "aggregate": "mean",
+          "field": "signed_salary",
+          "title": "Filtered Average Salary",
+          "axis": {
+            "labelExpr": "abs(datum.value)",
+            "format": "$.2f"
+          }
+        },
+        "color": {
+          "field": "Gender",
+          "scale": {"range": ["#675193", "#ca8861"]},
+          "legend": {"orient": "top", "title": null}
+        },
+        "tooltip": [
+          {"field": "Job Title", "type": "nominal", "title": "Job Title"},
+          {"field": "Gender", "type": "nominal", "title": "Gender"},
+          {"field": "Salary", "type": "quantitative", "title": "Salary", "format": "$.2f"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false}
+  }
+}
