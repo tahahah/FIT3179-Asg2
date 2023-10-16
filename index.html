@@ -17,6 +17,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600&family=Livvic:wght@200&family=Montserrat:wght@600&display=swap"
     rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600&family=Livvic:wght@200&family=Montserrat:wght@600&family=PT+Sans&display=swap" rel="stylesheet">
   <style>
     h1,
     h2,
@@ -36,22 +37,21 @@
 
     <div class="row">
       <div class="column">
-        <h2>Jobs across Australia</h2>
+        <h2>Job postings across Australia</h2>
         <div class="pure-g">
           <div class="pure-u-1-1">
             <div id="mapVis" class="vis-container"></div>
           </div>
         </div>
-        <input type="range" id="numJobsSlider" name="numJobs" min="0" max="100" step="1" value="0">
-        <br>
-        <br>
         <div class="pure-g">
           <div class="pure-u-1-2">
             <p>We can see that the job postings are more populated in the capital cities, especially those in the south
-              east of Australia. This can be attributed to the fact that most of Australia is still very loosely populated. The density of population is high only within the metropolitan cities that are highlighted by the bubbles, which explains the density of jobs also being greater in the same cities. Therefore, living in one of these cities provides a clear advantage to gaining job opportunities </p>
+              east of Australia. This can be attributed to the fact that most of Australia is still very loosely populated. The density of population is high only within the metropolitan cities that are highlighted by the bubbles, which explains the density of jobs also being greater in the same cities. Therefore, living in one of these developed cities provides a clear advantage to gaining job opportunities </p>
           </div>
-          <div class="pure-u-1-2">
-            <p><i>🖱️ Hover over the city points in the map to see more information about them.</i></p>
+          <div class="pure-u-1-2" id="map_hover">
+            <p><i>📝 Hover over the city points in the map to see more information about them.</i></p>
+            <br>
+            <p><i>✨ The top 4 cities with the most job postings are highlighted in special colors</i></p>
           </div>
         </div>
       </div>
@@ -68,8 +68,8 @@
         </div>
 
         <p>There is a strong trend of higher salaries in older people with years of experience. This is indicated
-          through the prevalence of darker shades in the top right portion of the heatmap.</p> <br>
-          <p><i>🖱️ Hover over the shaded rectangles in the chart to see more information about them.</i></p>
+          through the prevalence of darker shades in the top right portion of the heatmap. The older an individual is, the more experience they tend to have which justifies their higher pay</p> <br>
+          <p><i>📝 Hover over the shaded rectangles in the chart to see more information about them.</i></p>
 
       </div>
       <div class="column">
@@ -109,7 +109,7 @@
           </div>
         </div>
         <p>Most job positions posted require the hired applicant to pursue a full-time employment contract. This is the standard practice with over 60% of the job postings being for full-time jobs. To increase the chances of success in job pursuit, one must aim for full-time jobs. Casual and Part time jobs are posted significantly lesser times. This indicates that employers are looking for employees that are dedicated and willing to commit to a full time working life style.</p><br>
-        <p><i>🖱️ Hover over the pie slices in the chart to interact with them.</i></p>
+        <p><i>👆🏽 Hover over the pie slices in the chart to interact with them.</i></p>
       </div>
     </div>
     <div class="row">
@@ -124,13 +124,12 @@
           <div class="pure-u-1-2" id="diverging_text">
             
             <p> From a cursory glance, there are discernible gaps in salaries between genders in many positions. The brown bars tend to be taller in most cases, suggesting that males, on average, receive higher salaries than their female counterparts in those positions. However, there are instances where the female average salary (purple bars) is competitive or even surpasses the male average.</p>
-            <br>
+            
             <p> Upon taking a wholistic view of the chart, it is apparent that the distribution for the female salary is consistently distributed similar to the male salary. While the male bars do stretch longer than the female bars, the female bars are not far off.</p>
-            <br><br>
-            <br>
-            <p><i>🖱️ Select a subset of the chart in the top graph to amplify it within the bottom chart.</i></p>
-            <br>
-            <p><i>🖱️ Hover over the shaded rectangles in the chart to see more information about them.</i></p>
+            
+            <p><i>🔍 Select a subset of the chart in the top chart to zoom into it within the bottom chart.</i></p>
+            
+            <p><i>📝 Hover over the bars in the chart to see more information about the Job titles and the exact salary.</i></p>
 
           </div>
         </div>

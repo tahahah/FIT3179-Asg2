@@ -1,3 +1,4 @@
+
 body {
     background: linear-gradient(to bottom, #E9F5F7, #97f0f8); /* Updated to include gradient */
 }
@@ -40,7 +41,13 @@ h2 {
 p {
     color: #333333; /* Dark gray color for the descriptive text */
     margin: 10px;
-    font-size: 16px;
+    font-size: 18px;
+    font-family: 'PT Sans', sans-serif; 
+}
+
+#map_hover p {
+    margin-left: 40px;
+
 }
 
 #divergingBarVis {
@@ -110,13 +117,10 @@ h2 {
     margin: 0 0 10px 0;
 }
 
-p {
-    font-size: 16px;
-    margin: 0;
-}
-
 .footer p {
-    margin: 10px 0;
+    margin: 20px;
+    font-weight: bold;
+    text-align: left;
 }
 
 .logo {
